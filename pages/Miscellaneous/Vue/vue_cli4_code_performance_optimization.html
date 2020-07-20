@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vue-cli4 代码层面（优化） | JS-Drama</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/assets/images/favicon.ico">
+    <meta name="description" content="JS-Drama的前端记录">
+    <link rel="preload" href="/assets/css/0.styles.197df536.css" as="style"><link rel="preload" href="/assets/js/app.78d20233.js" as="script"><link rel="preload" href="/assets/js/2.142b9977.js" as="script"><link rel="preload" href="/assets/js/32.b28f894f.js" as="script"><link rel="prefetch" href="/assets/js/10.7965d3ca.js"><link rel="prefetch" href="/assets/js/11.a1a37a94.js"><link rel="prefetch" href="/assets/js/12.3903a706.js"><link rel="prefetch" href="/assets/js/13.9c49d1b8.js"><link rel="prefetch" href="/assets/js/14.e69210a3.js"><link rel="prefetch" href="/assets/js/15.7704011e.js"><link rel="prefetch" href="/assets/js/16.836ef4f5.js"><link rel="prefetch" href="/assets/js/17.85329cbe.js"><link rel="prefetch" href="/assets/js/18.74c4eab0.js"><link rel="prefetch" href="/assets/js/19.91dd5ced.js"><link rel="prefetch" href="/assets/js/20.d24799d7.js"><link rel="prefetch" href="/assets/js/21.38d3463f.js"><link rel="prefetch" href="/assets/js/22.4de63102.js"><link rel="prefetch" href="/assets/js/23.c738aacc.js"><link rel="prefetch" href="/assets/js/24.16b6477f.js"><link rel="prefetch" href="/assets/js/25.71243c37.js"><link rel="prefetch" href="/assets/js/26.a1b91ada.js"><link rel="prefetch" href="/assets/js/27.baf65f8f.js"><link rel="prefetch" href="/assets/js/28.d158d923.js"><link rel="prefetch" href="/assets/js/29.ede74e4f.js"><link rel="prefetch" href="/assets/js/3.3f6a5f27.js"><link rel="prefetch" href="/assets/js/30.fb8581f3.js"><link rel="prefetch" href="/assets/js/31.a40f8429.js"><link rel="prefetch" href="/assets/js/33.b406e737.js"><link rel="prefetch" href="/assets/js/4.49d729ee.js"><link rel="prefetch" href="/assets/js/5.9f8a3be7.js"><link rel="prefetch" href="/assets/js/6.6789525e.js"><link rel="prefetch" href="/assets/js/7.0258b857.js"><link rel="prefetch" href="/assets/js/8.d8dab235.js"><link rel="prefetch" href="/assets/js/9.3fde2878.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.197df536.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/images/logo.jpg" alt="JS-Drama" class="logo"> <span class="site-name can-hide">JS-Drama</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="ES5-基础" class="dropdown-title"><span class="title">ES5-基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          1. 入门篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/ES5/basic/class_1.html" class="nav-link">
+  1). 导论
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/basic/class_2.html" class="nav-link">
+  2). 历史
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/basic/class_3.html" class="nav-link">
+  3). 基本语法
+</a></li></ul></li><li class="dropdown-item"><h4>
+          2. 数据类型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/ES5/types/class_1.html" class="nav-link">
+  概述
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/types/class_2.html" class="nav-link">
+  null, undefined 和布尔值
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/types/class_3.html" class="nav-link">
+  数值
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/types/class_4.html" class="nav-link">
+  字符串
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/types/class_5.html" class="nav-link">
+  对象
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/types/class_6.html" class="nav-link">
+  函数
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/types/class_7.html" class="nav-link">
+  数组
+</a></li></ul></li><li class="dropdown-item"><h4>
+          3. 运算符
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/ES5/operators/class_1.html" class="nav-link">
+  算术运算符
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/operators/class_2.html" class="nav-link">
+  比较运算符
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/operators/class_3.html" class="nav-link">
+  布尔运算符
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/operators/class_4.html" class="nav-link">
+  二进制位运算符
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/operators/class_5.html" class="nav-link">
+  其他运算符，运算顺序
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/pages/ES5/test1.html" class="nav-link">
+  语法专题-待定
+</a></li><li class="dropdown-item"><!----> <a href="/pages/ES5/test2.html" class="nav-link">
+  标准库-待定
+</a></li><li class="dropdown-item"><!----> <a href="/pages/ES5/test3.html" class="nav-link">
+  面向对象编程-待定
+</a></li><li class="dropdown-item"><!----> <a href="/pages/ES5/test4.html" class="nav-link">
+  异步操作-待定
+</a></li><li class="dropdown-item"><!----> <a href="/pages/ES5/test5.html" class="nav-link">
+  DOM-待定
+</a></li><li class="dropdown-item"><!----> <a href="/pages/ES5/test6.html" class="nav-link">
+  事件-待定
+</a></li><li class="dropdown-item"><!----> <a href="/pages/ES5/test7.html" class="nav-link">
+  浏览器模型-待定
+</a></li><li class="dropdown-item"><!----> <a href="/pages/ES5/test8.html" class="nav-link">
+  附录：网页元素接口-待定
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具类" class="dropdown-title"><span class="title">工具类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/Tool/commitizen/class_1.html" class="nav-link">
+  git cz
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂类-待分类" class="dropdown-title"><span class="title">杂类-待分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/namingThings/class_1.html" class="nav-link">
+  函数命名
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/vue+websocket/class_1.html" class="nav-link">
+  vue+websocket
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/git/class_1.html" class="nav-link">
+  git常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/JS-Array/class_1.html" class="nav-link">
+  JS数组那些特别好用的技巧
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/css/focus-within.html" class="nav-link">
+  神奇的选择器 :focus-within
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/car/traffic_accident_treatment.html" class="nav-link">
+  99%的人不知道：车祸后保险公司赔完，还能找全责方要一大笔钱！ 【真实案例】
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/Vue/vue_cli4_packaging_performance_optimization.html" class="nav-link">
+  vue-cli4 打包全面配置(优化)
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/Vue/vue_cli4_code_performance_optimization.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  vue-cli4 代码层(优化)
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/Vue/after_emitting_copyPlugin.html" class="nav-link">
+  vue-cli 3/4 跑项目时卡在 98% after emitting CopyPlugin 无法运行
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/Algorithm/not_born_wise.html" class="nav-link">
+  天生不聪明
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/JS-Drama/JS-Drama.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="ES5-基础" class="dropdown-title"><span class="title">ES5-基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          1. 入门篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/ES5/basic/class_1.html" class="nav-link">
+  1). 导论
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/basic/class_2.html" class="nav-link">
+  2). 历史
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/basic/class_3.html" class="nav-link">
+  3). 基本语法
+</a></li></ul></li><li class="dropdown-item"><h4>
+          2. 数据类型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/ES5/types/class_1.html" class="nav-link">
+  概述
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/types/class_2.html" class="nav-link">
+  null, undefined 和布尔值
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/types/class_3.html" class="nav-link">
+  数值
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/types/class_4.html" class="nav-link">
+  字符串
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/types/class_5.html" class="nav-link">
+  对象
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/types/class_6.html" class="nav-link">
+  函数
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/types/class_7.html" class="nav-link">
+  数组
+</a></li></ul></li><li class="dropdown-item"><h4>
+          3. 运算符
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/ES5/operators/class_1.html" class="nav-link">
+  算术运算符
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/operators/class_2.html" class="nav-link">
+  比较运算符
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/operators/class_3.html" class="nav-link">
+  布尔运算符
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/operators/class_4.html" class="nav-link">
+  二进制位运算符
+</a></li><li class="dropdown-subitem"><a href="/pages/ES5/operators/class_5.html" class="nav-link">
+  其他运算符，运算顺序
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/pages/ES5/test1.html" class="nav-link">
+  语法专题-待定
+</a></li><li class="dropdown-item"><!----> <a href="/pages/ES5/test2.html" class="nav-link">
+  标准库-待定
+</a></li><li class="dropdown-item"><!----> <a href="/pages/ES5/test3.html" class="nav-link">
+  面向对象编程-待定
+</a></li><li class="dropdown-item"><!----> <a href="/pages/ES5/test4.html" class="nav-link">
+  异步操作-待定
+</a></li><li class="dropdown-item"><!----> <a href="/pages/ES5/test5.html" class="nav-link">
+  DOM-待定
+</a></li><li class="dropdown-item"><!----> <a href="/pages/ES5/test6.html" class="nav-link">
+  事件-待定
+</a></li><li class="dropdown-item"><!----> <a href="/pages/ES5/test7.html" class="nav-link">
+  浏览器模型-待定
+</a></li><li class="dropdown-item"><!----> <a href="/pages/ES5/test8.html" class="nav-link">
+  附录：网页元素接口-待定
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具类" class="dropdown-title"><span class="title">工具类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/Tool/commitizen/class_1.html" class="nav-link">
+  git cz
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂类-待分类" class="dropdown-title"><span class="title">杂类-待分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/namingThings/class_1.html" class="nav-link">
+  函数命名
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/vue+websocket/class_1.html" class="nav-link">
+  vue+websocket
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/git/class_1.html" class="nav-link">
+  git常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/JS-Array/class_1.html" class="nav-link">
+  JS数组那些特别好用的技巧
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/css/focus-within.html" class="nav-link">
+  神奇的选择器 :focus-within
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/car/traffic_accident_treatment.html" class="nav-link">
+  99%的人不知道：车祸后保险公司赔完，还能找全责方要一大笔钱！ 【真实案例】
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/Vue/vue_cli4_packaging_performance_optimization.html" class="nav-link">
+  vue-cli4 打包全面配置(优化)
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/Vue/vue_cli4_code_performance_optimization.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  vue-cli4 代码层(优化)
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/Vue/after_emitting_copyPlugin.html" class="nav-link">
+  vue-cli 3/4 跑项目时卡在 98% after emitting CopyPlugin 无法运行
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/Algorithm/not_born_wise.html" class="nav-link">
+  天生不聪明
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/JS-Drama/JS-Drama.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>vue-cli4 代码层面（优化）</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/Miscellaneous/Vue/vue_cli4_code_performance_optimization.html#_1-v-if-和-v-show-区分使用场景" class="sidebar-link">1. v-if 和 v-show 区分使用场景</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/Miscellaneous/Vue/vue_cli4_code_performance_optimization.html#_2-computed-和-watch-区分使用场景" class="sidebar-link">2. computed 和 watch 区分使用场景</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/Miscellaneous/Vue/vue_cli4_code_performance_optimization.html#_3-v-for-遍历必须为-item-添加-key，且避免同事使用-v-if" class="sidebar-link">3. v-for 遍历必须为 item 添加 key，且避免同事使用 v-if</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/Miscellaneous/Vue/vue_cli4_code_performance_optimization.html#_4-长列表性能优化" class="sidebar-link">4. 长列表性能优化</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/Miscellaneous/Vue/vue_cli4_code_performance_optimization.html#_5-事件的销毁" class="sidebar-link">5. 事件的销毁</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/Miscellaneous/Vue/vue_cli4_code_performance_optimization.html#_6-图片资源懒加载" class="sidebar-link">6. 图片资源懒加载</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/Miscellaneous/Vue/vue_cli4_code_performance_optimization.html#_7-路由懒加载" class="sidebar-link">7.  路由懒加载</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/Miscellaneous/Vue/vue_cli4_code_performance_optimization.html#_8-第三方插件的按需引入" class="sidebar-link">8.  第三方插件的按需引入</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/Miscellaneous/Vue/vue_cli4_code_performance_optimization.html#_9-优化无线列表性能" class="sidebar-link">9.  优化无线列表性能</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/Miscellaneous/Vue/vue_cli4_code_performance_optimization.html#_10-服务端渲染-ssr-or-预渲染" class="sidebar-link">10.  服务端渲染 SSR or 预渲染</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue-cli4-代码层面（优化）"><a href="#vue-cli4-代码层面（优化）" class="header-anchor">#</a> vue-cli4 代码层面（优化）</h1> <h2 id="_1-v-if-和-v-show-区分使用场景"><a href="#_1-v-if-和-v-show-区分使用场景" class="header-anchor">#</a> 1. v-if 和 v-show 区分使用场景</h2> <p><code>v-if</code>是 <strong>真正</strong> 的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建；也是<strong>惰性的</strong>：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。</p> <p><code>v-show</code> 就简单得多， 不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 的 display 属性进行切换。</p> <p>所以，v-if 适用于在运行时很少改变条件，不需要频繁切换条件的场景；v-show 则适用于需要非常频繁切换条件的场景。</p> <h2 id="_2-computed-和-watch-区分使用场景"><a href="#_2-computed-和-watch-区分使用场景" class="header-anchor">#</a> 2. computed 和 watch 区分使用场景</h2> <p><code>computed</code> 是计算属性，依赖其他属性值，并且 computed 的值有缓存，只有它依赖的属性值发生改变，下一次获取 <code>computed</code>的值时才会重新计算 computed 的值。</p> <p><code>watch</code>更多的是「观察」的作用，类似于某些数据的监听回调 ，每当监听的数据变化时都会执行回调进行后续操作；</p> <p><strong>运用场景：</strong></p> <ul><li>当我们需要进行数值计算，并且依赖于其它数据时，应该使用 computed，因为可以利用 computed 的缓存特性，避免每次获取值时，都要重新计算；</li> <li>我们需要在数据变化时执行异步或开销较大的操作时，应该使用 watch，使用 watch 选项允许我们执行异步操作 ( 访问一个 API )，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。这些都是计算属性无法做到的。</li></ul> <h2 id="_3-v-for-遍历必须为-item-添加-key，且避免同事使用-v-if"><a href="#_3-v-for-遍历必须为-item-添加-key，且避免同事使用-v-if" class="header-anchor">#</a> 3. v-for 遍历必须为 item 添加 key，且避免同事使用 v-if</h2> <p><strong>（1）v-for 遍历必须为 item 添加 key</strong> 在列表数据进行遍历渲染时，需要为每一项 item 设置唯一 key 值，方便 Vue.js 内部机制精准找到该条列表数据。当 state 更新时，新的状态值和旧的状态值对比，较快地定位到 diff 。</p> <p><strong>（2）v-for 遍历避免同时使用 v-if</strong> v-for 比 v-if 优先级高，如果每一次都需要遍历整个数组，将会影响速度，尤其是当之需要渲染很小一部分的时候，必要情况下应该替换成 computed 属性。</p> <p>推荐：</p> <div class="language-vue line-numbers-mode"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>user in activeUsers<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>user.id<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      {{ user.name }}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  computed<span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">activeUsers</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>users<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">user</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> user<span class="token punctuation">.</span>isActive
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>不推荐：</p> <div class="language-vue line-numbers-mode"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>user in users<span class="token punctuation">&quot;</span></span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>user.isActive<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>user.id<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      {{ user.name }}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="_4-长列表性能优化"><a href="#_4-长列表性能优化" class="header-anchor">#</a> 4. 长列表性能优化</h2> <p>Vue 会通过 <code>Object.defineProperty</code>对数据进行劫持，来实现视图响应数据的变化，然而有些时候我们的组件就是纯粹的数据展示，不会有任何改变，我们就不需要 Vue 来劫持我们的数据，在大量数据展示的情况下，这能够很明显的减少组件初始化的时间，那如何禁止 Vue 劫持我们的数据呢？可以通过 Object.freeze 方法来冻结一个对象，一旦被冻结的对象就再也不能被修改了。</p> <div class="language-vue line-numbers-mode"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span><span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  <span class="token function-variable function">data</span><span class="token operator">:</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    users<span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token keyword">async</span> <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> users <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/api/users&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>users <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">freeze</span><span class="token punctuation">(</span>users<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h2 id="_5-事件的销毁"><a href="#_5-事件的销毁" class="header-anchor">#</a> 5. 事件的销毁</h2> <p>Vue 组件销毁时，会自动清理它与其它实例的连接，解绑它的全部指令及事件监听器，但是仅限于组件本身的事件。如果在 js 内使用<code>addEventListene</code> 等方式是不会自动销毁的，我们需要在组件销毁时手动移除这些事件的监听，以免造成<code>内存泄露</code>，如：</p> <div class="language-vue line-numbers-mode"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span><span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>click<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">beforeDestroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>click<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h2 id="_6-图片资源懒加载"><a href="#_6-图片资源懒加载" class="header-anchor">#</a> 6. 图片资源懒加载</h2> <p>对于图片过多的页面，为了加速页面加载速度，所以很多时候我们需要将页面内未出现在可视区域内的图片先不做加载， 等到滚动到可视区域后再去加载。这样对于页面加载性能上会有很大的提升，也提高了用户体验。我们在项目中使用 Vue 的<code>vue-lazyload</code>插件： (1) 安装插件</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">npm</span> <span class="token function">install</span> vue-lazyload --save-dev
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>(2)在入口文件 main.js 中引入并使用</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> VueLazyload <span class="token keyword">from</span> <span class="token string">&quot;vue-lazyload&quot;</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>然后再 vue 中直接使用</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueLazyload<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>或者添加自定义选项</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueLazyload<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  preLoad<span class="token operator">:</span> <span class="token number">1.3</span><span class="token punctuation">,</span>
+  <span class="token comment">// error: require('@/assets/PC/default.png'), // 图片加载失败时显示的图片</span>
+  <span class="token comment">// loading: require('@/assets/PC/default.png'), // 图片加载状态下显示的图片</span>
+  <span class="token comment">// 加载错误后最大尝试次数</span>
+  attempt<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token comment">// 插件生命周期回调 自定义操作逻辑</span>
+  adapter<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">loading</span><span class="token punctuation">(</span><span class="token parameter">listender<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 图片加载错误时触发</span>
+      listender<span class="token punctuation">.</span>el<span class="token punctuation">.</span>style<span class="token punctuation">.</span>cssText <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">background: url(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;@/assets/PC/default.png&quot;</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">) center center no-repeat;background-size: cover;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">loaded</span><span class="token punctuation">(</span><span class="token parameter">listender<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      listender<span class="token punctuation">.</span>el<span class="token punctuation">.</span>style<span class="token punctuation">.</span>cssText <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">error</span><span class="token punctuation">(</span><span class="token parameter">listender<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 图片加载错误时触发</span>
+      listender<span class="token punctuation">.</span>el<span class="token punctuation">.</span>style<span class="token punctuation">.</span>cssText <span class="token operator">=</span>
+        listender<span class="token punctuation">.</span>el<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;data-avatar&quot;</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&quot;1&quot;</span>
+          <span class="token operator">?</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">background: url(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;@/assets/PC/_avatar.png&quot;</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">) center center no-repeat;background-size: cover;</span><span class="token template-punctuation string">`</span></span>
+          <span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">background: url(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;@/assets/PC/default.png&quot;</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">) center center no-repeat;background-size: cover;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 优化加载性能</span>
+  observer<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  listenEvents<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;scroll&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p>(3)在 vue 文件中将 img 标签的 src 属性直接改为 v-lazy，从而将图片显示方式更改为懒加载显示：</p> <div class="language-vue line-numbers-mode"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">v-lazy</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>require('@/assets/PC/logo.png')<span class="token punctuation">&quot;</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Logo<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">v-lazy</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>item.avatar<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>item.title<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>以上为 vue-lazyload 插件的简单使用，如果要看插件的更多参数选项，可以查看 vue-lazyload 的 <a href="https://www.npmjs.com/package/vue-lazyload" target="_blank" rel="noopener noreferrer">地址。<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="_7-路由懒加载"><a href="#_7-路由懒加载" class="header-anchor">#</a> 7.  路由懒加载</h2> <p>Vue 是单页面应用，可能会有很多的路由引入，这样使用 webpack 打包后的文件很大，当进入首页时，加载的资源过多， 页面会出现白屏的情况， 不利于用户体验。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应的组件，这样就更加高效了。会大大提高首页白屏显示的速度，但是可能其他的页面的速度就会降下来。 <strong>路由懒加载</strong></p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 两种不同的写法</span>
+<span class="token comment">// 使用默认命名 E.g: chunk-40927450.dd35a3d5.js</span>
+<span class="token keyword">const</span> <span class="token function-variable function">Foo</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./Foo.vue'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 指定打包文件名 E.g: myFoo.b1174499.js</span>
+<span class="token keyword">const</span> <span class="token function-variable function">Foo</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token comment">/* webpackChunkName: &quot;myFoo&quot; */</span><span class="token punctuation">,</span> <span class="token string">'./Foo.vue'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  routes<span class="token operator">:</span><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> path<span class="token operator">:</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> component<span class="token operator">:</span> Foo <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="_8-第三方插件的按需引入"><a href="#_8-第三方插件的按需引入" class="header-anchor">#</a> 8.  第三方插件的按需引入</h2> <p>我们在项目中经常会需要引入第三方插件，如果我们直接引入整个插件，会导致项目的体积太大，我们可以借助 <code>babel-plugin-component</code> ，然后可以只引入需要的组件，以达到减小项目体积的目的。以下为项目中引入 element-ui 组件库为例： (1) 首先，安装 <code>babel-plugin-component</code>:</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">npm</span> <span class="token function">install</span> babel-plugin-component -D
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>(2) 然后将.babelrc 修改为：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;presets&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&quot;es2015&quot;</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token string">&quot;modules&quot;</span><span class="token operator">:</span><span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;plugins&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+    <span class="token punctuation">[</span>
+      <span class="token string">&quot;component&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;libraryName&quot;</span><span class="token operator">:</span><span class="token string">&quot;element-ui&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;styleLibraryName&quot;</span><span class="token operator">:</span><span class="token string">&quot;theme-chalk&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>(3) 在 main.js 中引入部分组件</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Button<span class="token punctuation">,</span> Select <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;element-ui&quot;</span><span class="token punctuation">;</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Button<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Select<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_9-优化无线列表性能"><a href="#_9-优化无线列表性能" class="header-anchor">#</a> 9.  优化无线列表性能</h2> <p>如果你的应用存在非常长或者无限滚动的列表，那么需要采用 <code>窗口化</code> 的技术来优化性能，只需要渲染少部分区域的内容，减少重新渲染组件和创建 dom 节点的时间。你可以参考以下开源项目 <code>vue-virtual-scroll-list</code> 和 <code>vue-virtual-scroller</code> 来优化这种无限列表的场景的。</p> <h2 id="_10-服务端渲染-ssr-or-预渲染"><a href="#_10-服务端渲染-ssr-or-预渲染" class="header-anchor">#</a> 10.  服务端渲染 SSR or 预渲染</h2> <p>服务端渲染是指 Vue 在客户端将标签渲染成的整个 html 片段的工作在服务端完成，服务端形成的 html 片段直接返回给客户端这个过程就叫做服务端渲染。</p> <p><strong>(1) 服务端渲染的优点:</strong></p> <ul><li>更好的 SEO： 因为 SPA 页面的内容是通过 Ajax 获取的，而搜索引擎爬取工具并不会等待 Ajax 异步完成后再抓取页面内容，所以在 SPA 中是抓取不到页面通过 Ajax 获取到的内容；而 SSR 是直接有服务端返回已渲染好的页面（数据已经包含在页面中），所以搜索引擎爬取工具可以抓取渲染好的页面；</li> <li>更快等待内容到达时间（首屏加载更快）：SPA 会等待所有 Vue 编译后的 JS 文件都下载完成后，才开始进行页面的渲染，文件下载等需要一定的时间等，所以首屏渲染需要一定的时间；SSR 直接由服务端渲染好页面直接返回显示，无需等待下载 js 文件及再去渲染等，所以 SSR 有更快的内容到达时间。</li></ul> <p><strong>(2) 服务端渲染的缺点:</strong></p> <ul><li>更多的开发条件限制：例如服务端渲染只支持 beforeCreate 和 created 两个钩子函数，这样会导致一些外部扩展库需要特殊处理，才能在服务端渲染应用程序中运行；并且与可以部署在任何静态文件服务器上的完全静态单页面应用程序 SPA 不同，服务端渲染应用程序，需要处于 Node.js server 运行环境。</li> <li>更多的服务器负载：在 Node.js 中渲染完整的应用程序，显然会比仅仅提供静态文件的 server 更加大量占用 CPU 资源，因此如果你预料在高流量环境下使用，请准备相应的服务器负载，并明智的采用缓存策略。</li></ul> <p>如果你的项目的 SEO 和首屏渲染是评价项目的关键指标，那么你的项目就需要服务端渲染来帮组你实现最佳的初始加载性能和 SEO，具体的 Vue SSR 如何实现，<a href="https://blog.csdn.net/fengshi_fengshi/article/details/89356907" target="_blank" rel="noopener noreferrer">可以参考作者的另一篇《Vue SSR 踩坑之旅》<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="custom-block tip"><p class="custom-block-title">参考资料 - 感谢 🍻🍻🍻</p> <p><a href="https://juejin.im/post/5ee39801f265da770b40e40e" target="_blank" rel="noopener noreferrer">VUE 项目性能优化-实战-案例记录<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> - Hecate: VUE 项目性能优化-实战-案例记录</p></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新:</span> <span class="time">7/20/2020, 3:17:18 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.78d20233.js" defer></script><script src="/assets/js/2.142b9977.js" defer></script><script src="/assets/js/32.b28f894f.js" defer></script>
+  </body>
+</html>
